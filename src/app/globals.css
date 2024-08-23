@@ -16,6 +16,16 @@
   }
 }
 
-body {
-  @apply bg-gray-100 text-gray-800;
+@layer components {
+  body {
+    background: theme("colors.slate.800");
+  }
+}
+
+a {
+  transition: color 0.5s;
+}
+
+a:hover {
+  color: theme("colors.slate.300");
 }

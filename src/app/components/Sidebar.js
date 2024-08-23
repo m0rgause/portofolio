@@ -2,7 +2,10 @@ import Image from "next/image";
 
 const Sidebar = () => {
   return (
-    <div className="w-64 h-[97%] bg-gray-800 text-white flex flex-col items-center p-4 rounded-lg m-3">
+    <div
+      className="w-80 h-[96%] bg-slate-700 text-white flex flex-col items-center pt-10 px-14 rounded-[24px] m-5"
+      id="sidebar"
+    >
       <Image
         src="/assets/images/profile.jpg"
         alt="Your Name"
