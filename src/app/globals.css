@@ -10,22 +10,34 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
+    --background-color: rgba(24, 24, 27, 1);
+    --second-background-color: rgba(24, 24, 27, 0.8);
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
   }
 }
 
-@layer components {
-  body {
-    background: theme("colors.slate.800");
+@media (prefers-color-scheme: light) {
+  :root {
+    --background-color: rgba(255, 255, 255, 1);
   }
+}
+
+body {
+  background: var(--background-color);
+  color: rgba(var(--foreground-rgb), 1);
+  font-family: "Inter", sans-serif;
+}
+
+.container {
+  max-width: 80ch;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
 a {
-  transition: color 0.5s;
+  color: rgba(var(--foreground-rgb), 1);
+  text-decoration: none;
 }
-
-a:hover {
-  color: theme("colors.slate.300");
+.active {
+  color: rgba(var(--foreground-rgb), 1);
 }
