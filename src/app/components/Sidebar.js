@@ -13,19 +13,19 @@ const Sidebar = () => {
         height={120}
         className="rounded-full"
       />
-      <h1 className="text-2xl font-semibold mt-4">Your Name</h1>
-      <p className="mt-2">Web Developer</p>
+      <h1 className="text-2xl font-semibold mt-4">Ahmad Baihaki Nur</h1>
+      <p className="mt-2">Software Engineer</p>
 
       <div className="mt-8 space-y-4">
         <div>
           <h2 className="text-lg font-medium">Contact</h2>
-          <p>Email: youremail@example.com</p>
-          <p>Phone: +123 456 789</p>
+          <p>Email: kikiaf193@gmail.com</p>
+          <p>Whatsapp: +62 858 8186 1075</p>
         </div>
 
         <div>
           <h2 className="text-lg font-medium">Location</h2>
-          <p>Your City, Country</p>
+          <p>Jakarta Barat</p>
         </div>
 
         <div>
