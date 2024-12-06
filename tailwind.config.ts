@@ -7,12 +7,17 @@ export default {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-      },
+    // screens: {
+    // sm: { max: "767px" },
+    // md: { min: "768px" },
+    // lg: { min: "992px" },
+    // xl: { min: "1200px" },
+    // "2xl": { min: "1400px" },
+    // },
+    fontFamily: {
+      poppins: ["Poppins", "sans-serif"],
+      inter: ["Inter", "sans-serif"],
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 } satisfies Config;
