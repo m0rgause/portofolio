@@ -1,4 +1,5 @@
 import Image from "next/image";
+import config from "../../../next.config";
 
 interface CardProps {
   imageUrl: string;
@@ -76,7 +77,7 @@ const Card: React.FC<CardProps> = ({ imageUrl, title, description, tags }) => {
   return (
     <div className="card bg-base-300 w-100 shadow">
       <figure>
-        <Image src={imageUrl} alt={title} />
+        <Image src={config.basePath + imageUrl} alt={title} />
       </figure>
       <div className="card-body">
         <h2 className="card-title">{title}</h2>
