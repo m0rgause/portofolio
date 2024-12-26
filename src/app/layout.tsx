@@ -38,7 +38,7 @@ export default function RootLayout({
         <div className="container">
           <footer className="footer bg-base-100 text-neutral-content items-center py-10 mt-5">
             <aside className="grid-flow-col items-center">
-              <p>2018 © Built with Next.js &#10084;</p>
+              <p>Since 2018 © Built with &#10084;</p>
             </aside>
             <nav className="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
               <a
