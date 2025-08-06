@@ -2,6 +2,8 @@
 import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { motion } from "framer-motion";
+import ThemeToggle from "./ThemeToggle";
 
 interface NavChildProps {
   classname: string;
@@ -17,10 +19,13 @@ interface NavItemProps {
 const Navbar: React.FC = () => {
   const active = usePathname();
 
-  console.log(active);
-
   return (
-    <>
+    <motion.div
+      className="sticky top-0 z-50 bg-base-100/80 backdrop-blur-md border-b border-base-300"
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
       <div className="navbar">
         <div className="navbar-start sm:flex">
           <div className="dropdown lg:hidden">
@@ -51,11 +56,17 @@ const Navbar: React.FC = () => {
           </div>
         </div>
         <div className="navbar-center">
-          <a className="text-2xl dark:text-white italic font-bold">
-            Portofolio.
-          </a>
+          <motion.a
+            className="text-2xl dark:text-white italic font-bold cursor-pointer"
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 400, damping: 10 }}
+          >
+            Portofolio<span className="text-primary">.</span>
+          </motion.a>
         </div>
-        <div className="navbar-end"></div>
+        <div className="navbar-end">
+          <ThemeToggle />
+        </div>
       </div>
       <div className="sm:navbar">
         <div className="navbar-start"></div>
@@ -64,7 +75,7 @@ const Navbar: React.FC = () => {
         </div>
         <div className="navbar-end"></div>
       </div>
-    </>
+    </motion.div>
   );
 };
 
@@ -85,23 +96,24 @@ const NavChild: React.FC<NavChildProps> = ({ classname, active }) => {
 };
 
 const NavItem: React.FC<NavItemProps> = ({ children, link, active }) => {
-  if (active === link) {
-    return (
-      <li className="active">
-        <Link href={link}>{children}</Link>
-      </li>
-    );
-  } else if (active === "/" && link === "/about") {
-    return (
-      <li className="active">
-        <Link href={link}>{children}</Link>
-      </li>
-    );
-  }
+  const isActive = active === link || (active === "/" && link === "/about");
+
   return (
-    <li>
-      <Link href={link}>{children}</Link>
-    </li>
+    <motion.li
+      whileHover={{ scale: 1.05 }}
+      transition={{ type: "spring", stiffness: 400, damping: 10 }}
+    >
+      <Link
+        href={link}
+        className={`transition-colors duration-300 ${
+          isActive
+            ? "text-primary font-semibold bg-primary/10"
+            : "hover:text-primary hover:bg-primary/5"
+        }`}
+      >
+        {children}
+      </Link>
+    </motion.li>
   );
 };
 
