@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { FaCode, FaRocket, FaMobile } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import { useIsClient } from "@/hooks/useIsClient";
+import Link from "next/link";
 
 export default function Hero() {
   const [currentRole, setCurrentRole] = useState(0);
@@ -135,22 +136,24 @@ export default function Hero() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, delay: 1.4 }}
       >
-        <motion.a
-          href="/projects"
-          className="btn btn-primary btn-lg"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          View My Work
-        </motion.a>
-        <motion.a
-          href="/contact"
-          className="btn btn-outline btn-lg"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          Get In Touch
-        </motion.a>
+        <Link href="/projects">
+          <motion.div
+            className="btn btn-primary btn-lg"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            View My Work
+          </motion.div>
+        </Link>
+        <Link href="/contact">
+          <motion.div
+            className="btn btn-outline btn-lg"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Get In Touch
+          </motion.div>
+        </Link>
       </motion.div>
 
       {/* <motion.div

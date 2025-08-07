@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import ProjectCard from "@/components/ProjectCard";
+import Link from "next/link";
 
 export default function Projects() {
   const projects = [
@@ -144,14 +145,15 @@ export default function Projects() {
               >
                 View More on GitHub
               </motion.a>
-              <motion.a
-                href="/contact"
-                className="btn btn-outline"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Let&apos;s Collaborate
-              </motion.a>
+              <Link href="/contact">
+                <motion.div
+                  className="btn btn-outline"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Let&apos;s Collaborate
+                </motion.div>
+              </Link>
             </div>
           </div>
         </motion.div>

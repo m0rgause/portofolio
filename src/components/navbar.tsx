@@ -56,13 +56,15 @@ const Navbar: React.FC = () => {
           </div>
         </div>
         <div className="navbar-center">
-          <motion.a
-            className="text-2xl dark:text-white italic font-bold cursor-pointer"
-            whileHover={{ scale: 1.05 }}
-            transition={{ type: "spring", stiffness: 400, damping: 10 }}
-          >
-            Portofolio<span className="text-primary">.</span>
-          </motion.a>
+          <Link href="/about">
+            <motion.div
+              className="text-2xl dark:text-white italic font-bold cursor-pointer text-primary"
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            >
+              Portofolio<span className="text-primary">.</span>
+            </motion.div>
+          </Link>
         </div>
         <div className="navbar-end">
           <ThemeToggle />

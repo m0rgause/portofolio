@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Hero from "@/components/Hero";
 import Skills from "@/components/Skills";
 import Experience from "@/components/Experience";
+import Link from "next/link";
 
 export default function About() {
   return (
@@ -112,22 +113,24 @@ export default function About() {
                 world. Let&apos;s create something amazing together!
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <motion.a
-                  href="/projects"
-                  className="btn btn-primary"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  View My Projects
-                </motion.a>
-                <motion.a
-                  href="/contact"
-                  className="btn btn-outline"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  Let&apos;s Connect
-                </motion.a>
+                <Link href="/projects">
+                  <motion.div
+                    className="btn btn-primary"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    View My Projects
+                  </motion.div>
+                </Link>
+                <Link href="/contact">
+                  <motion.div
+                    className="btn btn-outline"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    Let&apos;s Connect
+                  </motion.div>
+                </Link>
               </div>
             </div>
           </motion.div>

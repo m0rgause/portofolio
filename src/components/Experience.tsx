@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { FiBriefcase, FiCalendar, FiMapPin } from "react-icons/fi";
+import Link from "next/link";
 
 export default function Experience() {
   const experiences = [
@@ -202,14 +203,15 @@ export default function Experience() {
               projects. Let&apos;s discuss how we can create something amazing
               together.
             </p>
-            <motion.a
-              href="/contact"
-              className="btn btn-primary"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Get In Touch
-            </motion.a>
+            <Link href="/contact">
+              <motion.div
+                className="btn btn-primary"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Get In Touch
+              </motion.div>
+            </Link>
           </div>
         </motion.div>
       </div>
