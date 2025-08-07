@@ -21,7 +21,7 @@ const Navbar: React.FC = () => {
 
   return (
     <motion.div
-      className="sticky top-0 z-50 bg-base-100/80 backdrop-blur-md border-b border-base-300"
+      className="sticky top-0 z-50 bg-base-100/90 backdrop-blur-md border-b border-base-300/50 shadow-sm"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
@@ -32,7 +32,7 @@ const Navbar: React.FC = () => {
             <div
               tabIndex={0}
               role="button"
-              className="btn btn-ghost btn-circle"
+              className="btn btn-ghost btn-circle hover:bg-primary/10"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -50,7 +50,7 @@ const Navbar: React.FC = () => {
               </svg>
             </div>
             <NavChild
-              classname="menu menu-box dropdown-content bg-base-100 rounded-box w-52 p-2 shadow-lg z-50"
+              classname="menu menu-box dropdown-content bg-base-100 rounded-box w-52 p-2 shadow-xl border border-base-300/50 z-50"
               active={active}
             />
           </div>
@@ -58,7 +58,7 @@ const Navbar: React.FC = () => {
         <div className="navbar-center">
           <Link href="/about">
             <motion.div
-              className="text-2xl dark:text-white italic font-bold cursor-pointer text-primary"
+              className="text-2xl italic font-bold cursor-pointer text-base-content hover:text-primary transition-colors duration-300"
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
@@ -107,10 +107,10 @@ const NavItem: React.FC<NavItemProps> = ({ children, link, active }) => {
     >
       <Link
         href={link}
-        className={`transition-colors duration-300 ${
+        className={`transition-all duration-300 rounded-lg px-3 py-2 ${
           isActive
-            ? "text-primary font-semibold bg-primary/10"
-            : "hover:text-primary hover:bg-primary/5"
+            ? "text-primary font-semibold bg-primary/10 hover:bg-primary/20 hover:text-primary"
+            : "text-base-content hover:text-primary hover:bg-primary/5"
         }`}
       >
         {children}
