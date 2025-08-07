@@ -48,11 +48,11 @@ export default function About() {
                   Developer based in Jakarta, Indonesia.
                 </p>
                 <p className="text-base-content/80 leading-relaxed">
-                  Currently pursuing a Bachelor&apos;s degree in Computer
-                  Science, I thrive on transforming innovative concepts into
-                  practical and user-friendly software solutions. My expertise
-                  lies in creating seamless user experiences, designing robust
-                  system architectures, and writing clean, efficient code.
+                  With a completed Bachelor&apos;s degree in Computer Science, I
+                  thrive on transforming innovative concepts into practical and
+                  user-friendly software solutions. My expertise lies in
+                  creating seamless user experiences, designing robust system
+                  architectures, and writing clean, efficient code.
                 </p>
                 <p className="text-base-content/80 leading-relaxed">
                   Throughout my journey, I&apos;ve contributed to diverse
@@ -177,7 +177,7 @@ export default function About() {
                       Universitas Mercu Buana
                     </p>
                     <p className="text-sm text-base-content/60">
-                      Currently Pursuing
+                      2025 Graduate
                     </p>
                   </div>
                 </div>

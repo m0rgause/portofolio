@@ -21,6 +21,9 @@ export default function ParticlesBackground() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
+    // Ensure window is available (client-side only)
+    if (typeof window === "undefined") return;
+
     const resizeCanvas = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;

@@ -3,9 +3,11 @@
 import { motion } from "framer-motion";
 import { FaCode, FaRocket, FaMobile } from "react-icons/fa";
 import { useState, useEffect } from "react";
+import { useIsClient } from "@/hooks/useIsClient";
 
 export default function Hero() {
   const [currentRole, setCurrentRole] = useState(0);
+  const isClient = useIsClient();
   const roles = [
     "Fullstack Developer",
     "Mobile Developer",
@@ -14,11 +16,13 @@ export default function Hero() {
   ];
 
   useEffect(() => {
+    if (!isClient) return;
+
     const interval = setInterval(() => {
       setCurrentRole((prev) => (prev + 1) % roles.length);
     }, 2000);
     return () => clearInterval(interval);
-  }, [roles.length]);
+  }, [roles.length, isClient]);
 
   return (
     <motion.div
@@ -47,17 +51,22 @@ export default function Hero() {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
+          suppressHydrationWarning
         >
-          <motion.span
-            key={currentRole}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.5 }}
-            className="text-accent font-semibold"
-          >
-            {roles[currentRole]}
-          </motion.span>
+          {isClient ? (
+            <motion.span
+              key={currentRole}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.5 }}
+              className="text-accent font-semibold"
+            >
+              {roles[currentRole]}
+            </motion.span>
+          ) : (
+            <span className="text-accent font-semibold">{roles[0]}</span>
+          )}
         </motion.div>
 
         <motion.p
@@ -66,11 +75,11 @@ export default function Hero() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
-          I&apos;m a dedicated Computer Science student pursuing my
-          Bachelor&apos;s degree. My passion lies in transforming innovative
-          ideas into reality through intuitive and polished software interfaces.
-          I focus on crafting exceptional user experiences, building robust
-          architectures, and writing clean, maintainable code.
+          I&apos;m a dedicated Computer Science graduate with a Bachelor&apos;s
+          degree. My passion lies in transforming innovative ideas into reality
+          through intuitive and polished software interfaces. I focus on
+          crafting exceptional user experiences, building robust architectures,
+          and writing clean, maintainable code.
         </motion.p>
       </motion.div>
 
@@ -144,7 +153,7 @@ export default function Hero() {
         </motion.a>
       </motion.div>
 
-      <motion.div
+      {/* <motion.div
         className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
         animate={{
           y: [0, 10, 0],
@@ -158,7 +167,7 @@ export default function Hero() {
         <div className="w-6 h-10 border-2 border-primary rounded-full flex justify-center">
           <div className="w-1 h-3 bg-primary rounded-full mt-2"></div>
         </div>
-      </motion.div>
+      </motion.div> */}
     </motion.div>
   );
 }

@@ -3,11 +3,15 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { FiArrowUp } from "react-icons/fi";
 import { useState, useEffect } from "react";
+import { useIsClient } from "@/hooks/useIsClient";
 
 export default function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false);
+  const isClient = useIsClient();
 
   useEffect(() => {
+    if (!isClient) return;
+
     const toggleVisibility = () => {
       if (window.pageYOffset > 300) {
         setIsVisible(true);
@@ -18,7 +22,7 @@ export default function ScrollToTop() {
 
     window.addEventListener("scroll", toggleVisibility);
     return () => window.removeEventListener("scroll", toggleVisibility);
-  }, []);
+  }, [isClient]);
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -26,6 +30,11 @@ export default function ScrollToTop() {
       behavior: "smooth",
     });
   };
+
+  // Don't render until mounted to prevent hydration mismatch
+  if (!isClient) {
+    return null;
+  }
 
   return (
     <AnimatePresence>
