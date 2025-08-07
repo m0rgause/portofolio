@@ -78,6 +78,13 @@ export default function Projects() {
       tags: ["PHP", "Codeigniter 4", "Oracle", "Bootstrap"],
       githubUrl: "https://github.com/m0rgause",
     },
+    {
+      imageUrl: "/assets/img/syaki.jpg",
+      title: "SyaKi Virtual Assistant",
+      description:
+        "A Virtual Assistant designed to assist students in managing their academic schedules and answering FAQs from university resources.",
+      tags: ["Next.js", "TypeScript", "Tailwind CSS", "LLama3.1"],
+    },
   ];
 
   return (
