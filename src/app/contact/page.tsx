@@ -1,32 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FiMail, FiGithub, FiLinkedin, FiMapPin, FiSend } from "react-icons/fi";
-import { useState } from "react";
+import { FiMail, FiGithub, FiLinkedin, FiMapPin } from "react-icons/fi";
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission here
-    console.log("Form submitted:", formData);
-  };
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
+  // Form submission will be handled by external service (e.g., Formspree, Netlify Forms)
   const contactInfo = [
     {
       icon: FiMail,
