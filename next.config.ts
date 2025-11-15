@@ -8,8 +8,7 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: "",
-  assetPrefix: "",
+  basePath: isProd ? "/portofolio" : "",
   /* config options here */
 };
 
