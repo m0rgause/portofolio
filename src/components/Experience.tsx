@@ -12,13 +12,14 @@ export default function Experience() {
       location: "Jakarta, Indonesia",
       period: "July 2023 - February 2025",
       description:
-        "Developed a SMART LPDP portal with monitoring tools, automated reporting, and real-time transaction tracking. Created and deployed a user-friendly BPJS Kesehatan Dashboard with real-time updates. Also led database migration and dashboard redesign for financial monitoring systems at Institut Teknologi Bandung and Universitas Indonesia.",
+        "Developed SMART LPDP web application with monitoring tools and real-time transaction tracking. Created BPJS Kesehatan Dashboard with real-time updates. Worked on Financial Monitoring Systems for Institut Teknologi Bandung and Universitas Indonesia. Developed VA Management System for Universitas Negeri Jakarta.",
       technologies: [
-        "Fullstack Development",
-        "Data Visualization",
-        "Database Migration",
-        "Automated Reporting",
+        "React",
+        "Node.js",
+        "PostgreSQL",
         "Real-time Dashboards",
+        "Data Visualization",
+        "System Integration",
       ],
     },
     {
@@ -27,13 +28,14 @@ export default function Experience() {
       location: "Jakarta, Indonesia",
       period: "June 2022 - December 2024",
       description:
-        "Developed and maintained web applications using PHP and Node.js. Collaborated with teams to analyze requirements, implement database architecture, optimize queries, and work with UI/UX designers to create user-friendly interfaces.",
+        "Developed and maintained web applications using PHP and Node.js. Collaborated with teams to analyze requirements, implement database architecture, and optimize queries for performance. Worked closely with UI/UX designers to create user-friendly interfaces.",
       technologies: [
         "PHP",
         "Node.js",
-        "Database Architecture",
-        "SQL",
-        "UI/UX Collaboration",
+        "MySQL",
+        "PostgreSQL",
+        "Database Optimization",
+        "API Development",
       ],
     },
     {
@@ -42,13 +44,13 @@ export default function Experience() {
       location: "Jakarta, Indonesia",
       period: "July 2024 - August 2024",
       description:
-        "Developed a broadcasting application using Flutter. Configured a Virtual Private Server (VPS) for radio broadcasting and set up a local server to transmit signals to the VPS, ensuring a seamless and reliable streaming service.",
+        "Developed a broadcasting application using Flutter. Configured Virtual Private Server (VPS) for radio broadcasting and set up local server to transmit signals to VPS, ensuring seamless and reliable streaming service.",
       technologies: [
         "Flutter",
         "Dart",
         "VPS Configuration",
-        "Server Management",
-        "Streaming",
+        "Server Administration",
+        "Broadcasting Systems",
       ],
     },
     {
@@ -57,14 +59,14 @@ export default function Experience() {
       location: "Jakarta, Indonesia",
       period: "February 2024 - June 2024",
       description:
-        "Improved a merchant application by upgrading its UI/UX and adding key features such as vouchers, a points system, E-Card top-up, and notifications. Utilized Google Cloud Platform, Firebase, and Jira for development and project management.",
+        "Improved merchant application by upgrading UI/UX and adding features like vouchers, points system, E-Card top-up, and notifications. Utilized Google Cloud Platform, Firebase, and Jira for development and project management.",
       technologies: [
         "Flutter",
         "Dart",
-        "UI/UX",
         "Google Cloud Platform",
         "Firebase",
         "Jira",
+        "Mobile UI/UX",
       ],
     },
     {
@@ -73,13 +75,14 @@ export default function Experience() {
       location: "Jakarta, Indonesia",
       period: "August 2023 - April 2024",
       description:
-        "Developed a device loan system website to manage warehouse inventory and track device history. Collaborated on a customer management website, participated in code reviews, and independently deployed new features. Also installed, configured, and monitored servers for optimal performance.",
+        "Contributed to customer management website project. Developed device loan system website to manage warehouse inventory and track device history. Installed, configured, and monitored servers for deployed applications.",
       technologies: [
-        "Fullstack Development",
-        "Inventory Management",
-        "Server Configuration",
-        "Code Review",
-        "Project Collaboration",
+        "React",
+        "Node.js",
+        "MongoDB",
+        "Server Management",
+        "Inventory Systems",
+        "DevOps",
       ],
     },
     {
@@ -88,8 +91,14 @@ export default function Experience() {
       location: "Jakarta, Indonesia",
       period: "June 2020 - June 2021",
       description:
-        "Developed a Computer-Based Test (CBT) application for SMK SATRIA using PHP and Bootstrap. This streamlined the examination process and improved the user experience for both students and administrators.",
-      technologies: ["PHP", "Bootstrap", "MySQL", "Web Development"],
+        "Developed Computer-Based Test (CBT) application for SMK SATRIA. Created E-Vote, Buku Anggota, and internal applications for MAPALA Organization at Budiluhur University. Streamlined examination processes and improved user experience.",
+      technologies: [
+        "PHP",
+        "CodeIgniter",
+        "Bootstrap",
+        "MySQL",
+        "Web Applications",
+      ],
     },
   ];
 
@@ -136,7 +145,7 @@ export default function Experience() {
                 }`}
               >
                 <motion.div
-                  className="bg-base-100 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="bg-base-100/80 backdrop-blur-xl rounded-2xl p-6 shadow-lg hover:shadow-2xl border border-base-300/50 hover:border-primary/30 transition-all duration-300"
                   whileHover={{ scale: 1.02, y: -5 }}
                 >
                   {/* Company badge */}
@@ -194,7 +203,7 @@ export default function Experience() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <div className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-2xl p-8">
+          <div className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-2xl p-8 border border-primary/20 shadow-lg">
             <h3 className="text-2xl font-bold mb-4">
               Let&apos;s Work Together
             </h3>

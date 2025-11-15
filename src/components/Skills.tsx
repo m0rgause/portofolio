@@ -37,53 +37,51 @@ import {
 export default function Skills() {
   const skillCategories = [
     {
-      title: "Frontend",
+      title: "Languages",
       skills: [
         { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
         { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
+        { name: "PHP", icon: SiPhp, color: "#777BB4" },
+        { name: "Python", icon: SiPython, color: "#3776AB" },
+        { name: "Dart", icon: SiDart, color: "#0175C2" },
+        { name: "C++", icon: SiCplusplus, color: "#00599C" },
+      ],
+    },
+    {
+      title: "Frontend & Mobile",
+      skills: [
         { name: "React.js", icon: SiReact, color: "#61DAFB" },
         { name: "Next.js", icon: SiNextdotjs, color: "#000000" },
         { name: "Vue.js", icon: SiVuedotjs, color: "#4FC08D" },
-        { name: "jQuery", icon: SiJquery, color: "#0769AD" },
-        { name: "Bootstrap", icon: SiBootstrap, color: "#7952B3" },
+        { name: "Flutter", icon: SiFlutter, color: "#02569B" },
         { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4" },
+        { name: "Bootstrap", icon: SiBootstrap, color: "#7952B3" },
       ],
     },
     {
-      title: "Backend",
+      title: "Backend & Frameworks",
       skills: [
-        { name: "PHP", icon: SiPhp, color: "#777BB4" },
-        { name: "Laravel", icon: SiLaravel, color: "#FF2D20" },
-        { name: "CodeIgniter", icon: SiCodeigniter, color: "#EF4223" },
-        { name: "Python", icon: SiPython, color: "#3776AB" },
-        { name: "Django", icon: SiDjango, color: "#092E20" },
-        { name: "Flask", icon: SiFlask, color: "#000000" },
         { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
         { name: "Express.js", icon: SiExpress, color: "#000000" },
-      ],
-    },
-    {
-      title: "Mobile",
-      skills: [
-        { name: "Flutter", icon: SiFlutter, color: "#02569B" },
-        { name: "Dart", icon: SiDart, color: "#0175C2" },
-      ],
-    },
-    {
-      title: "Database & Tools",
-      skills: [
-        { name: "MySQL", icon: SiMysql, color: "#4479A1" },
-        { name: "PostgreSQL", icon: SiPostgresql, color: "#336791" },
+        { name: "Laravel", icon: SiLaravel, color: "#FF2D20" },
+        { name: "CodeIgniter", icon: SiCodeigniter, color: "#EF4223" },
+        { name: "Django", icon: SiDjango, color: "#092E20" },
+        { name: "Flask", icon: SiFlask, color: "#000000" },
         { name: "Prisma", icon: SiPrisma, color: "#2D3748" },
         { name: "Sequelize", icon: SiSequelize, color: "#52B0E7" },
-        { name: "Git", icon: SiGit, color: "#F05032" },
-        { name: "Oracle Cloud", icon: SiOracle, color: "#F80000" },
+      ],
+    },
+    {
+      title: "Database & Cloud",
+      skills: [
+        { name: "PostgreSQL", icon: SiPostgresql, color: "#336791" },
+        { name: "MySQL", icon: SiMysql, color: "#4479A1" },
+        { name: "Oracle DB", icon: SiOracle, color: "#F80000" },
         { name: "Google Cloud", icon: SiGooglecloud, color: "#4285F4" },
         { name: "Firebase", icon: SiFirebase, color: "#FFCA28" },
+        { name: "Git", icon: SiGit, color: "#F05032" },
         { name: "Jira", icon: SiJira, color: "#0052CC" },
-        { name: "Cisco", icon: SiCisco, color: "#1BA0D7" },
         { name: "Linux", icon: SiLinux, color: "#FCC624" },
-        { name: "C++", icon: SiCplusplus, color: "#00599C" },
       ],
     },
   ];
@@ -117,11 +115,12 @@ export default function Skills() {
           {skillCategories.map((category) => (
             <motion.div
               key={category.title}
-              className="bg-base-200 rounded-2xl p-6 hover:shadow-xl transition-shadow duration-300"
+              className="bg-base-100/80 backdrop-blur-xl rounded-2xl p-6 shadow-lg border border-base-300/50 hover:shadow-2xl hover:border-primary/30 transition-all duration-300"
               initial={{ y: 50, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
+              whileHover={{ y: -5 }}
             >
               <h3 className="text-xl font-bold mb-6 text-center">
                 {category.title}
@@ -130,7 +129,7 @@ export default function Skills() {
                 {category.skills.map((skill) => (
                   <motion.div
                     key={skill.name}
-                    className="flex flex-col items-center p-3 bg-base-100 rounded-xl cursor-pointer group"
+                    className="flex flex-col items-center p-3 bg-base-200/50 rounded-xl cursor-pointer group shadow-sm hover:shadow-md"
                     initial={{ scale: 0, opacity: 0 }}
                     whileInView={{ scale: 1, opacity: 1 }}
                     whileHover={{ scale: 1.1, y: -5 }}
@@ -158,7 +157,7 @@ export default function Skills() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <div className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-2xl p-8">
+          <div className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-2xl p-8 border border-primary/20 shadow-lg">
             <h3 className="text-2xl font-bold mb-4">Always Learning</h3>
             <p className="text-base-content/70 max-w-3xl mx-auto">
               Technology evolves rapidly, and so do I. I&apos;m constantly
