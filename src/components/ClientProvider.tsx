@@ -7,6 +7,7 @@ import LoadingScreen from "@/components/LoadingScreen";
 import ScrollToTop from "@/components/ScrollToTop";
 import ParticlesBackground from "@/components/ParticlesBackground";
 import Navbar from "@/components/navbar";
+import config from "../../next.config";
 
 interface ClientProviderProps {
   children: React.ReactNode;
@@ -136,7 +137,11 @@ export default function ClientProvider({ children }: ClientProviderProps) {
               <div className="footer text-base-content py-10">
                 <aside className="flex flex-col gap-2">
                   <div className="flex items-center gap-2">
-                    <img src="/logo.png" alt="Logo" className="w-8 h-8" />
+                    <img
+                      src={config.basePath + "/logo.png"}
+                      alt="Logo"
+                      className="w-8 h-8"
+                    />
                     <span className="text-xl font-bold">Ahmad Baihaki Nur</span>
                   </div>
                   <motion.p

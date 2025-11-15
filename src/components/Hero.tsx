@@ -13,6 +13,7 @@ import { HiSparkles, HiCode, HiLightningBolt } from "react-icons/hi";
 import { useState, useEffect } from "react";
 import { useIsClient } from "@/hooks/useIsClient";
 import Link from "next/link";
+import config from "../../next.config";
 
 export default function Hero() {
   const [currentRole, setCurrentRole] = useState(0);
@@ -232,7 +233,7 @@ export default function Hero() {
                 >
                   <div className="w-full h-full bg-base-100 rounded-2xl flex items-center justify-center overflow-hidden">
                     <img
-                      src="/logo.png"
+                      src={config.basePath + "/logo.png"}
                       alt="Logo"
                       className="w-full h-full object-contain p-4"
                     />

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import ThemeToggle from "./ThemeToggle";
+import config from "../../next.config";
 
 interface NavChildProps {
   classname: string;
@@ -71,7 +72,7 @@ const Navbar: React.FC = () => {
               >
                 <div className="relative w-10 h-10 overflow-hidden rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors duration-300">
                   <img
-                    src="/logo.png"
+                    src={config.basePath + "/logo.png"}
                     alt="Portfolio Logo"
                     className="w-full h-full object-contain p-1"
                   />

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import ClientProvider from "@/components/ClientProvider";
+import config from "../../next.config";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -49,7 +50,7 @@ export const metadata: Metadata = {
     siteName: "Ahmad Baihaki Nur Portfolio",
     images: [
       {
-        url: "/logo.png",
+        url: config.basePath + "/logo.png",
         width: 1200,
         height: 630,
         alt: "Ahmad Baihaki Nur - Portfolio",
@@ -61,7 +62,7 @@ export const metadata: Metadata = {
     title: "Ahmad Baihaki Nur - Fullstack Developer & Mobile Engineer",
     description:
       "Passionate Fullstack Developer and Flutter Mobile Developer specializing in web applications, mobile apps, and system architecture.",
-    images: ["/logo.png"],
+    images: [config.basePath + "/logo.png"],
     creator: "@m0rgause",
   },
   robots: {
@@ -78,7 +79,11 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: "/favicon.png" },
-      { url: "/logo.png", sizes: "192x192", type: "image/png" },
+      {
+        url: `${config.basePath}/logo.png`,
+        sizes: "192x192",
+        type: "image/png",
+      },
     ],
     apple: "/apple-touch-icon.png",
     shortcut: "/favicon.png",
